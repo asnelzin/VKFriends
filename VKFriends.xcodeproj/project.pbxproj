@@ -12,6 +12,7 @@
 		112211811DD21911006BC342 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1122117F1DD21911006BC342 /* Main.storyboard */; };
 		112211831DD21911006BC342 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 112211821DD21911006BC342 /* Assets.xcassets */; };
 		112211861DD21911006BC342 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 112211841DD21911006BC342 /* LaunchScreen.storyboard */; };
+		457644C759747D28D2EDB2F0 /* Pods_VKFriends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B97A9916897B34E19AEF0B4A /* Pods_VKFriends.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		112211821DD21911006BC342 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		112211851DD21911006BC342 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		112211871DD21911006BC342 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79AA5C49307FA43B3CCD7D0D /* Pods-VKFriends.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKFriends.release.xcconfig"; path = "Pods/Target Support Files/Pods-VKFriends/Pods-VKFriends.release.xcconfig"; sourceTree = "<group>"; };
+		B97A9916897B34E19AEF0B4A /* Pods_VKFriends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VKFriends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA45317CBB5F6CD23E02C93D /* Pods-VKFriends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKFriends.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VKFriends/Pods-VKFriends.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,63 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				457644C759747D28D2EDB2F0 /* Pods_VKFriends.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		111AEB401DD21E3900716624 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		111AEB411DD21E4400716624 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		111AEB421DD21E5100716624 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1122117D1DD21911006BC342 /* ViewController.swift */,
+			);
+			name = Controllers;
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		111AEB431DD21E5B00716624 /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				112211841DD21911006BC342 /* LaunchScreen.storyboard */,
+				1122117F1DD21911006BC342 /* Main.storyboard */,
+			);
+			name = Stores;
+			path = Stores;
+			sourceTree = "<group>";
+		};
+		111AEB441DD21E6100716624 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Helpers;
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		1122116F1DD21910006BC342 = {
 			isa = PBXGroup;
 			children = (
-				1122117A1DD21911006BC342 /* VKFriends */,
+				5944079C65FD1FCF451AF576 /* Frameworks */,
+				4F0367DEEAB71416AEBD94CE /* Pods */,
 				112211791DD21911006BC342 /* Products */,
+				1122117A1DD21911006BC342 /* VKFriends */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +104,33 @@
 		1122117A1DD21911006BC342 /* VKFriends */ = {
 			isa = PBXGroup;
 			children = (
+				111AEB421DD21E5100716624 /* Controllers */,
+				111AEB441DD21E6100716624 /* Helpers */,
+				111AEB401DD21E3900716624 /* Models */,
+				111AEB431DD21E5B00716624 /* Stores */,
+				111AEB411DD21E4400716624 /* Views */,
 				1122117B1DD21911006BC342 /* AppDelegate.swift */,
-				1122117D1DD21911006BC342 /* ViewController.swift */,
-				1122117F1DD21911006BC342 /* Main.storyboard */,
 				112211821DD21911006BC342 /* Assets.xcassets */,
-				112211841DD21911006BC342 /* LaunchScreen.storyboard */,
 				112211871DD21911006BC342 /* Info.plist */,
 			);
 			path = VKFriends;
+			sourceTree = "<group>";
+		};
+		4F0367DEEAB71416AEBD94CE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FA45317CBB5F6CD23E02C93D /* Pods-VKFriends.debug.xcconfig */,
+				79AA5C49307FA43B3CCD7D0D /* Pods-VKFriends.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5944079C65FD1FCF451AF576 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B97A9916897B34E19AEF0B4A /* Pods_VKFriends.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +140,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1122118A1DD21911006BC342 /* Build configuration list for PBXNativeTarget "VKFriends" */;
 			buildPhases = (
+				35D8FC5EE4B90980C1353C3C /* [CP] Check Pods Manifest.lock */,
 				112211741DD21910006BC342 /* Sources */,
 				112211751DD21910006BC342 /* Frameworks */,
 				112211761DD21910006BC342 /* Resources */,
+				42386E612833C1BEAE89D57E /* [CP] Embed Pods Frameworks */,
+				A3F7C4B0A034314F8F4B2650 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -132,6 +204,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		35D8FC5EE4B90980C1353C3C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		42386E612833C1BEAE89D57E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VKFriends/Pods-VKFriends-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A3F7C4B0A034314F8F4B2650 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VKFriends/Pods-VKFriends-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		112211741DD21910006BC342 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -151,6 +271,7 @@
 				112211801DD21911006BC342 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		112211841DD21911006BC342 /* LaunchScreen.storyboard */ = {
@@ -159,6 +280,7 @@
 				112211851DD21911006BC342 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -259,6 +381,7 @@
 		};
 		1122118B1DD21911006BC342 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA45317CBB5F6CD23E02C93D /* Pods-VKFriends.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5VG9KZ2WUH;
@@ -272,6 +395,7 @@
 		};
 		1122118C1DD21911006BC342 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79AA5C49307FA43B3CCD7D0D /* Pods-VKFriends.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5VG9KZ2WUH;
@@ -302,6 +426,7 @@
 				1122118C1DD21911006BC342 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
