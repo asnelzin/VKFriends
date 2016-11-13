@@ -5,6 +5,7 @@ use_frameworks!
 target 'VKFriends' do
     pod 'SwiftyJSON', '~> 3.1.1'
     pod 'SwiftyVK', :git => 'https://github.com/WE-St0r/SwiftyVK.git'
+    pod 'Alamofire', '~> 4.0'
 end
 
 post_install do |installer|

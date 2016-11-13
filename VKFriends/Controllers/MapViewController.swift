@@ -1,16 +1,13 @@
 //
-//  ViewController.swift
-//  VKFriends
-//
-//  Created by Alexander Nelzin on 11/8/16.
-//  Copyright © 2016 Alexander Nelzin. All rights reserved.
+// Created by Alexander Nelzin on 14/11/16.
+// Copyright (c) 2016 Alexander Nelzin. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 
-class ViewController: UIViewController {
-
+class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,7 +17,4 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
-

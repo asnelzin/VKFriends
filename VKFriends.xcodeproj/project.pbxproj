@@ -8,23 +8,35 @@
 
 /* Begin PBXBuildFile section */
 		1122117C1DD21911006BC342 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1122117B1DD21911006BC342 /* AppDelegate.swift */; };
-		1122117E1DD21911006BC342 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1122117D1DD21911006BC342 /* ViewController.swift */; };
+		1122117E1DD21911006BC342 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1122117D1DD21911006BC342 /* ListTableViewController.swift */; };
 		112211811DD21911006BC342 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1122117F1DD21911006BC342 /* Main.storyboard */; };
 		112211831DD21911006BC342 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 112211821DD21911006BC342 /* Assets.xcassets */; };
 		112211861DD21911006BC342 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 112211841DD21911006BC342 /* LaunchScreen.storyboard */; };
 		457644C759747D28D2EDB2F0 /* Pods_VKFriends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B97A9916897B34E19AEF0B4A /* Pods_VKFriends.framework */; };
+		9CA450581DD91AD20001008B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA450571DD91AD20001008B /* MapKit.framework */; };
+		9CA4505A1DD91AD70001008B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA450591DD91AD70001008B /* CoreLocation.framework */; };
+		E135E117D3E278B04521D957 /* VKAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E135E6E9D3A8CA2F92FA2619 /* VKAPIWorker.swift */; };
+		E135E2E91BDEEB6CDA86F3D7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E135E0F27CB79E17AA59A82C /* Constants.swift */; };
+		E135E8B1A6D52906063EF334 /* VKFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = E135EA417E5780219C7CC1AA /* VKFriend.swift */; };
+		E135E909368F2C90C288DB8D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E135E59BC8D2E00779244343 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		112211781DD21911006BC342 /* VKFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1122117B1DD21911006BC342 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1122117D1DD21911006BC342 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1122117D1DD21911006BC342 /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
 		112211801DD21911006BC342 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		112211821DD21911006BC342 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		112211851DD21911006BC342 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		112211871DD21911006BC342 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79AA5C49307FA43B3CCD7D0D /* Pods-VKFriends.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKFriends.release.xcconfig"; path = "Pods/Target Support Files/Pods-VKFriends/Pods-VKFriends.release.xcconfig"; sourceTree = "<group>"; };
+		9CA450571DD91AD20001008B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		9CA450591DD91AD70001008B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B97A9916897B34E19AEF0B4A /* Pods_VKFriends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VKFriends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E135E0F27CB79E17AA59A82C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = SOURCE_ROOT; };
+		E135E59BC8D2E00779244343 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		E135E6E9D3A8CA2F92FA2619 /* VKAPIWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VKAPIWorker.swift; sourceTree = SOURCE_ROOT; };
+		E135EA417E5780219C7CC1AA /* VKFriend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VKFriend.swift; sourceTree = SOURCE_ROOT; };
 		FA45317CBB5F6CD23E02C93D /* Pods-VKFriends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKFriends.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VKFriends/Pods-VKFriends.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -33,6 +45,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CA4505A1DD91AD70001008B /* CoreLocation.framework in Frameworks */,
+				9CA450581DD91AD20001008B /* MapKit.framework in Frameworks */,
 				457644C759747D28D2EDB2F0 /* Pods_VKFriends.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -43,6 +57,7 @@
 		111AEB401DD21E3900716624 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E135EA417E5780219C7CC1AA /* VKFriend.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -57,7 +72,8 @@
 		111AEB421DD21E5100716624 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1122117D1DD21911006BC342 /* ViewController.swift */,
+				1122117D1DD21911006BC342 /* ListTableViewController.swift */,
+				E135E59BC8D2E00779244343 /* MapViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -74,6 +90,8 @@
 		111AEB441DD21E6100716624 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				E135E6E9D3A8CA2F92FA2619 /* VKAPIWorker.swift */,
+				E135E0F27CB79E17AA59A82C /* Constants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -123,6 +141,8 @@
 		5944079C65FD1FCF451AF576 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9CA450591DD91AD70001008B /* CoreLocation.framework */,
+				9CA450571DD91AD20001008B /* MapKit.framework */,
 				B97A9916897B34E19AEF0B4A /* Pods_VKFriends.framework */,
 			);
 			name = Frameworks;
@@ -212,7 +232,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		42386E612833C1BEAE89D57E /* [CP] Embed Pods Frameworks */ = {
@@ -252,8 +272,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1122117E1DD21911006BC342 /* ViewController.swift in Sources */,
+				1122117E1DD21911006BC342 /* ListTableViewController.swift in Sources */,
 				1122117C1DD21911006BC342 /* AppDelegate.swift in Sources */,
+				E135E117D3E278B04521D957 /* VKAPIWorker.swift in Sources */,
+				E135E8B1A6D52906063EF334 /* VKFriend.swift in Sources */,
+				E135E2E91BDEEB6CDA86F3D7 /* Constants.swift in Sources */,
+				E135E909368F2C90C288DB8D /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
