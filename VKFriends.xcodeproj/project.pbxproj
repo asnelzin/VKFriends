@@ -30,15 +30,15 @@
 		112211821DD21911006BC342 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		112211851DD21911006BC342 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		112211871DD21911006BC342 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		113B04721DD9CA2600EE781D /* BaseVKDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseVKDelegate.swift; path = VKFriends/BaseVKDelegate.swift; sourceTree = SOURCE_ROOT; };
+		113B04721DD9CA2600EE781D /* BaseVKDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseVKDelegate.swift; path = BaseVKDelegate.swift; sourceTree = "<group>"; };
 		79AA5C49307FA43B3CCD7D0D /* Pods-VKFriends.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKFriends.release.xcconfig"; path = "Pods/Target Support Files/Pods-VKFriends/Pods-VKFriends.release.xcconfig"; sourceTree = "<group>"; };
 		9CA450571DD91AD20001008B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		9CA450591DD91AD70001008B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B97A9916897B34E19AEF0B4A /* Pods_VKFriends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VKFriends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E135E0F27CB79E17AA59A82C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = SOURCE_ROOT; };
+		E135E0F27CB79E17AA59A82C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E135E59BC8D2E00779244343 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		E135E6E9D3A8CA2F92FA2619 /* VKAPIWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VKAPIWorker.swift; sourceTree = SOURCE_ROOT; };
-		E135EA417E5780219C7CC1AA /* VKFriend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VKFriend.swift; sourceTree = SOURCE_ROOT; };
+		E135E6E9D3A8CA2F92FA2619 /* VKAPIWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VKAPIWorker.swift; sourceTree = "<group>"; };
+		E135EA417E5780219C7CC1AA /* VKFriend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VKFriend.swift; sourceTree = "<group>"; };
 		FA45317CBB5F6CD23E02C93D /* Pods-VKFriends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKFriends.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VKFriends/Pods-VKFriends.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,9 +92,9 @@
 		111AEB441DD21E6100716624 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				E135E6E9D3A8CA2F92FA2619 /* VKAPIWorker.swift */,
-				E135E0F27CB79E17AA59A82C /* Constants.swift */,
 				113B04721DD9CA2600EE781D /* BaseVKDelegate.swift */,
+				E135E0F27CB79E17AA59A82C /* Constants.swift */,
+				E135E6E9D3A8CA2F92FA2619 /* VKAPIWorker.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
