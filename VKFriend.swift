@@ -33,7 +33,7 @@ class VKFriend {
         self.id = id
         self.linkProfileImage = linkProfileImage
         self.coordinates = CLLocationCoordinate2D(latitude: 0, longitude: 0)
-        getCoordinates()
+//        getCoordinates()
     }
 
     func reloadProfileImage() {

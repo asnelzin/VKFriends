@@ -22,7 +22,15 @@ class ListTableViewController: UITableViewController {
     
 
     var friends = [VKFriend]()
-    let vkManager = VKAPIWorker.sharedInstance
+    lazy var vkManager: VKAPIWorker = {
+        let manager = VKAPIWorker.sharedInstance
+        return manager
+    }()
+    
+    override func loadView() {
+        super.loadView()
+        vkManager.friendsGet()
+    }
 
 
     override func viewDidLoad() {
@@ -31,6 +39,7 @@ class ListTableViewController: UITableViewController {
         if vkManager.state == .authorized {
 //            reloadTableView()
             print("YES!")
+            print(vkManager.friends)
         }
     }
 
@@ -42,16 +51,6 @@ class ListTableViewController: UITableViewController {
         super.viewWillAppear(true)
 //        reloadTableView()
     }
-
-//    private func reloadTableView(){
-//        self.friends = vkManager.friends
-//        self.friendsTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-//        self.reloadUI()
-//    }
-//
-//    private func reloadUI(){
-//        self.friendsTableView.reloadData()
-//    }
 
 
     // MARK: - Table view data source
@@ -85,29 +84,3 @@ class ListTableViewController: UITableViewController {
 
         return cell
     }
-
-
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        friendsTableView.deselectRow(at: indexPath, animated: true)
-//        performSegue(withIdentifier: "fromListSegue", sender: indexPath)
-//    }
-}
-
-//// MARK: - Prepare for segue
-//extension ListTableViewController{
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-//        if segue.identifier == "fromListSegue"{
-//            if let vc = segue.destination as? PersonInformationViewController{
-//                if let index = sender as? IndexPath{
-//                    let row = index.row
-//                    let friend = friends[row]
-//                    vc.title = friend.getName()
-//                    vc.city = friend.getCity()
-//                    vc.name = friend.getName()
-//                    vc.id = friend.getId()
-//                    vc.ProfileImage = friendsTableView.cellForRow(at: index)?.imageView?.image
-//                }
-//            }
-//        }
-//    }
-//}
