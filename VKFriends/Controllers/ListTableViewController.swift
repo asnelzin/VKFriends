@@ -10,48 +10,23 @@ import UIKit
 
 
 class ListTableViewController: UITableViewController {
-    
+
+    lazy var vkManager: VKAPIWorker = {
+        let manager = VKAPIWorker.sharedInstance
+        return manager
+    }()
 
     @IBAction func refresh(_ sender: UIRefreshControl) {
         defer {
             sender.endRefreshing()
         }
-
-//        reloadTableView()
     }
-    
-
-    var friends = [VKFriend]()
-    lazy var vkManager: VKAPIWorker = {
-        let manager = VKAPIWorker.sharedInstance
-        return manager
-    }()
-    
-    override func loadView() {
-        super.loadView()
-        vkManager.friendsGet()
-    }
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if vkManager.state == .authorized {
-//            reloadTableView()
-            print("YES!")
-            print(vkManager.friends)
-        }
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didUpdateFriendsList(_:)), name: .friendsListUpdated, object: nil)
     }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-//        reloadTableView()
-    }
-
 
     // MARK: - Table view data source
 
@@ -62,25 +37,31 @@ class ListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return self.friends.count
+        return vkManager.friends.count
     }
-
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let row = indexPath.row
         /*if let cell = cell as? FriendTableViewCell{
             cell.configure(for: friends[row])
         }*/
-        let friend = friends[row]
+        let friend = vkManager.friends[row]
         let name = friend.getName()
         if friend.getCity() == "" {
             cell.textLabel?.text = name
-        }
-        else{
+        } else {
             cell.textLabel?.text = name + ": " + friend.getCity()
         }
         cell.imageView?.image = friend.profileImage.image
 
         return cell
     }
+}
+
+
+extension ListTableViewController {
+    func didUpdateFriendsList(_ notification: Notification) {
+        print(vkManager.friends)
+    }
+}

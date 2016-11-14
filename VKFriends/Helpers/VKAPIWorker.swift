@@ -5,11 +5,16 @@
 
 import Foundation
 import SwiftyVK
-//import AlamofireImage
 import Alamofire
 
 
+protocol VKAPIWorkerDeligate {
+    func didUpdateFriendsList()
+}
+
 class VKAPIWorker {
+    
+    var deligate: VKAPIWorkerDeligate?
     
     var friends = [VKFriend]()
 
@@ -26,11 +31,6 @@ class VKAPIWorker {
         return instance
     }()
 
-    init() {
-        VK.logIn()
-        friendsGet()
-    }
-
 
 //    func getFriendPhotoLink(friend: VKFriend) {
 //        _ = VK.API.Photos.get([
@@ -46,7 +46,7 @@ class VKAPIWorker {
 //                })
 //    }
 //
-    func friendsGet() {
+    func getFriendsList() {
         let req = VK.API.Friends.get([
                 .count: "0",
                 .fields: "city,domain"
@@ -69,6 +69,7 @@ class VKAPIWorker {
                 self.friends.append(newFriend)
 //                self.getFriendPhotoLink(friend: newFriend)
             }
+            NotificationCenter.default.post(name: .friendsListUpdated, object: nil)
         }
         req.errorBlock = {
             error in print("error")

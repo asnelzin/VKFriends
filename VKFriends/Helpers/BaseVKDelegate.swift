@@ -25,6 +25,8 @@ class BaseVKDelegate: VKDelegate {
     
     func vkAutorizationFailedWith(error: VK.Error) {
         // Called when SwiftyVK could not authorize. To let the application know that something went wrong.
+        print(error)
+        abort()
     }
     
     func vkShouldUseTokenPath() -> String? {
@@ -41,5 +43,6 @@ class BaseVKDelegate: VKDelegate {
     func vkDidAuthorizeWith(parameters: Dictionary<String, String>) {
         // Called when the user is log in.
         // Here you can start to send requests to the API.
+        VKAPIWorker.sharedInstance.getFriendsList()
     }
 }
