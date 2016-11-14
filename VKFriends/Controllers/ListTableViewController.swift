@@ -20,10 +20,13 @@ class ListTableViewController: UITableViewController {
         defer {
             sender.endRefreshing()
         }
+        // vkManager.getFriendsList()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
 
         NotificationCenter.default.addObserver(self, selector: #selector(self.didUpdateFriendsList(_:)), name: .friendsListUpdated, object: nil)
     }
@@ -31,30 +34,18 @@ class ListTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return vkManager.friends.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        let row = indexPath.row
-        /*if let cell = cell as? FriendTableViewCell{
-            cell.configure(for: friends[row])
-        }*/
-        let friend = vkManager.friends[row]
-        let name = friend.getName()
-        if friend.getCity() == "" {
-            cell.textLabel?.text = name
-        } else {
-            cell.textLabel?.text = name + ": " + friend.getCity()
-        }
-        cell.imageView?.image = friend.profileImage.image
 
+        let friend = vkManager.friends[indexPath.row]
+        cell.textLabel?.text = friend.getName()
         return cell
     }
 }
@@ -63,5 +54,9 @@ class ListTableViewController: UITableViewController {
 extension ListTableViewController {
     func didUpdateFriendsList(_ notification: Notification) {
         print(vkManager.friends)
+        
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 }
