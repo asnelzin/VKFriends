@@ -4,80 +4,30 @@
 //
 
 import Foundation
-import UIKit
-//import SDWebImage
 import MapKit
+import UIKit
 
 
 class VKFriend {
-    private var name: String = ""
-    private var city: String = ""
-    private var id: String = ""
+  private(set) var id: String
+  private(set) var name: String
 
-    var profileImage: UIImageView = UIImageView()
+  private(set) var image: UIImageView?
+  private(set) var coordinates: CLLocationCoordinate2D?
 
-    var linkProfileImage: String = "" {
-        didSet {
-            reloadProfileImage()
+  init(id: String, name: String, city: String) {
+    self.id = id
+    self.name = name
+    
+    if !city.isEmpty {
+      CLGeocoder().geocodeAddressString(city, completionHandler: { (placemarks, error) in
+        guard error == nil else {
+          return
         }
-    }
-
-    var coordinates: CLLocationCoordinate2D
-
-
-    init(name: String, city: String?, id: String, linkProfileImage: String) {
-        self.name = name
-        if let cityName = city {
-            self.city = cityName
+        if let placemark = placemarks?[0], let location = placemark.location {
+          self.coordinates = location.coordinate
         }
-        self.id = id
-        self.linkProfileImage = linkProfileImage
-        self.coordinates = CLLocationCoordinate2D(latitude: 0, longitude: 0)
-//        getCoordinates()
+      })
     }
-
-    func reloadProfileImage() {
-        if linkProfileImage == "" {
-            profileImage.image = #imageLiteral(resourceName: "camera")
-        } else {
-            //profileImage.image = UIImage(named: "reloadControlGif")
-//            profileImage.sd_setImage(with: URL(string: linkProfileImage))
-        }
-    }
-
-    // TODO: Refactor to in-property getters
-
-    func getName() -> String {
-        return name
-    }
-
-    func getCity() -> String {
-        return city
-    }
-
-    func getId() -> String {
-        return id
-    }
-
-    func getLinkPhoto() -> String {
-        return linkProfileImage
-    }
-
-    func getCoordinates() {
-        let geocoder = CLGeocoder()
-
-        if city == "" {
-            return
-        }
-
-        geocoder.geocodeAddressString(city, completionHandler: {
-            (placemark, error) in
-            if error != nil {
-                return
-            }
-            if let location = placemark?[0].location?.coordinate {
-                self.coordinates = location
-            }
-        })
-    }
+  }
 }

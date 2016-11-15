@@ -83,6 +83,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" id="dfV-pa-e7X"/>
+                    <connections>
+                        <outlet property="map" destination="rHw-rs-ZMY" id="eox-cV-RZJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cxw-5v-gS5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -11,52 +11,52 @@ import UIKit
 
 class ListTableViewController: UITableViewController {
 
-    lazy var vkManager: VKAPIWorker = {
-        let manager = VKAPIWorker.sharedInstance
-        return manager
-    }()
+  lazy var vkManager: VKAPIWorker = {
+    let manager = VKAPIWorker.sharedInstance
+    return manager
+  }()
 
-    @IBAction func refresh(_ sender: UIRefreshControl) {
-        defer {
-            sender.endRefreshing()
-        }
-        // vkManager.getFriendsList()
-    }
+  @IBAction func refresh(_ sender: UIRefreshControl) {
+    vkManager.getFriendsList()
+  }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+  override func viewDidLoad() {
+    super.viewDidLoad()
 
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+    self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
 
-        NotificationCenter.default.addObserver(self, selector: #selector(self.didUpdateFriendsList(_:)), name: .friendsListUpdated, object: nil)
-    }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return vkManager.friends.count
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-
-        let friend = vkManager.friends[indexPath.row]
-        cell.textLabel?.text = friend.getName()
-        return cell
-    }
+    NotificationCenter.default.addObserver(self, selector: #selector(self.didUpdateFriendsList(_:)),
+        name: .friendsListUpdated, object: nil)
+  }
 }
 
 
+// MARK: - TableView
 extension ListTableViewController {
-    func didUpdateFriendsList(_ notification: Notification) {
-        print(vkManager.friends)
-        
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
+  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return vkManager.friends.count
+  }
+
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+
+    let friend = vkManager.friends[indexPath.row]
+    cell.textLabel?.text = friend.name
+    return cell
+  }
+}
+
+// MARK: - Notifications handlers
+extension ListTableViewController {
+  func didUpdateFriendsList(_ notification: Notification) {
+    defer {
+      if refreshControl!.isRefreshing {
+        refreshControl!.endRefreshing()
+      }
     }
+
+    DispatchQueue.main.async {
+      self.tableView.reloadData()
+    }
+  }
 }

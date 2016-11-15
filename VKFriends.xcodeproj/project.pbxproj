@@ -18,6 +18,7 @@
 		9CA4505A1DD91AD70001008B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA450591DD91AD70001008B /* CoreLocation.framework */; };
 		E135E117D3E278B04521D957 /* VKAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E135E6E9D3A8CA2F92FA2619 /* VKAPIWorker.swift */; };
 		E135E2E91BDEEB6CDA86F3D7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E135E0F27CB79E17AA59A82C /* Constants.swift */; };
+		E135E39A123D5C28C5D68E9A /* FriendMapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E135ED1F1AE2E8E4AB1104A3 /* FriendMapAnnotation.swift */; };
 		E135E8B1A6D52906063EF334 /* VKFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = E135EA417E5780219C7CC1AA /* VKFriend.swift */; };
 		E135E909368F2C90C288DB8D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E135E59BC8D2E00779244343 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
@@ -30,7 +31,7 @@
 		112211821DD21911006BC342 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		112211851DD21911006BC342 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		112211871DD21911006BC342 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		113B04721DD9CA2600EE781D /* BaseVKDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseVKDelegate.swift; path = BaseVKDelegate.swift; sourceTree = "<group>"; };
+		113B04721DD9CA2600EE781D /* BaseVKDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseVKDelegate.swift; sourceTree = "<group>"; };
 		79AA5C49307FA43B3CCD7D0D /* Pods-VKFriends.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKFriends.release.xcconfig"; path = "Pods/Target Support Files/Pods-VKFriends/Pods-VKFriends.release.xcconfig"; sourceTree = "<group>"; };
 		9CA450571DD91AD20001008B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		9CA450591DD91AD70001008B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -39,6 +40,7 @@
 		E135E59BC8D2E00779244343 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E135E6E9D3A8CA2F92FA2619 /* VKAPIWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VKAPIWorker.swift; sourceTree = "<group>"; };
 		E135EA417E5780219C7CC1AA /* VKFriend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VKFriend.swift; sourceTree = "<group>"; };
+		E135ED1F1AE2E8E4AB1104A3 /* FriendMapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendMapAnnotation.swift; sourceTree = "<group>"; };
 		FA45317CBB5F6CD23E02C93D /* Pods-VKFriends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKFriends.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VKFriends/Pods-VKFriends.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,6 +97,7 @@
 				113B04721DD9CA2600EE781D /* BaseVKDelegate.swift */,
 				E135E0F27CB79E17AA59A82C /* Constants.swift */,
 				E135E6E9D3A8CA2F92FA2619 /* VKAPIWorker.swift */,
+				E135ED1F1AE2E8E4AB1104A3 /* FriendMapAnnotation.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				E135E8B1A6D52906063EF334 /* VKFriend.swift in Sources */,
 				E135E2E91BDEEB6CDA86F3D7 /* Constants.swift in Sources */,
 				E135E909368F2C90C288DB8D /* MapViewController.swift in Sources */,
+				E135E39A123D5C28C5D68E9A /* FriendMapAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

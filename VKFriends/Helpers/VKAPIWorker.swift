@@ -10,47 +10,42 @@ import Alamofire
 
 class VKAPIWorker {
 
-    var friends = [VKFriend]()
-
-    
-    // MARK: - Shared instance
-
-    static let sharedInstance: VKAPIWorker = {
-        let instance = VKAPIWorker()
-        return instance
-    }()
+  var friends = [VKFriend]()
 
 
-    // MARK: - Methods
-    
-    func getFriendsList() {
-        let req = VK.API.Friends.get([
-                .count: "0",
-                .fields: "city,domain"
-        ])
+  // MARK: - Shared instance
 
-        req.successBlock = {
-            response in
-            self.friends.removeAll()
+  static let sharedInstance: VKAPIWorker = {
+    let instance = VKAPIWorker()
+    return instance
+  }()
 
-            for friend in response["items"].arrayValue {
-                self.friends.append(VKFriend(
-                        name: "\(friend["last_name"].stringValue) \(friend["first_name"].stringValue)",
-                        city: friend["city", "title"].string ?? "",
-                        id: friend["id"].stringValue,
-                        linkProfileImage: ""
-                    )
-                )
-            }
-            NotificationCenter.default.post(name: .friendsListUpdated, object: nil)
-        }
 
-        req.errorBlock = {
-            error in
-            print("Couldn't get a friends list.")
-            abort()
-        }
+  // MARK: - Methods
 
-        req.send()
+  func getFriendsList() {
+    let req = VK.API.Friends.get([
+        .count: "0",
+        .fields: "city,domain"
+    ])
+
+    req.successBlock = { response in
+      self.friends.removeAll()
+
+      for friend in response["items"].arrayValue {
+        self.friends.append(VKFriend(
+            id: friend["id"].stringValue,
+            name: "\(friend["last_name"].stringValue) \(friend["first_name"].stringValue)",
+            city: friend["city", "title"].string ?? ""))
+      }
+      NotificationCenter.default.post(name: .friendsListUpdated, object: nil)
     }
+
+    req.errorBlock = { error in
+      print("Couldn't get a friends list.")
+      abort()
+    }
+
+    req.send()
+  }
 }
